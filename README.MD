@@ -24,7 +24,7 @@ A pipeline ETL é projetada para extrair dados de várias fontes, aplicar transf
 1. Instale o Apache Airflow conforme as instruções oficiais: [link](https://airflow.apache.org/docs/apache-airflow/stable/start/index.html)
 2. Clone este repositório: 
     ```
-    git clone https://github.com/seu-usuario/projeto-etl-airflow.git
+    git clone https://github.com/renato-avellar/Pipeline_ETL_airflow.git
     ```
 3. Instale as dependências necessárias:
     ```
