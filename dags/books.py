@@ -34,7 +34,7 @@ def create_csv(ti):
     books.to_csv("books.csv")
       
     
-with DAG('teste', start_date = datetime(2024,3,1),
+with DAG('books', start_date = datetime(2024,3,1),
          schedule_interval = '30 * * * *', catchup = False) as dag:
   
   extract_task = PythonOperator(
@@ -77,6 +77,5 @@ CSV_FILE="~/airflow/books.csv"
 # Comando para importar dados do CSV para o PostgreSQL
 psql -U $DB_USER -d $DB_NAME -c "\copy books FROM '$CSV_FILE' WITH CSV HEADER DELIMITER ',';"
 """
-)
-  
+  )
   extract_task >> create_csv_task >> create_table_task >> import_csv_task
